@@ -19,9 +19,7 @@ const requestHandler = (fn: (req: Request, res: Response) => Promise<any>): Requ
 };
 
 app.get('/', (req: Request, res: Response, next: NextFunction) => {
-    setTimeout(() => {
-        next(new Error('hello'))
-    }, 1)
+   res.send('Hello World');
 })
 
 app.use('/api', protect, router)
